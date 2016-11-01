@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Update CentOS with any patches
-yum update -y --exclude=kernel
-
-# Tools
-yum install -y nano git unzip screen
-
 # Apache
 
 yum install -y httpd httpd-devel https-tools
@@ -23,15 +17,6 @@ service httpd start
 
 yum install -y php php-cli php-common php-devel php-mysql
 
-# MySQL
-
-yum install -y mysql mysql-server mysql-devel
-chkconfig --add mysqld
-chkconfig mysql on
-
-service mysqld start
-
-mysql -u root -e "SHOW DATABASES";
 
 # Download Starter Content
 cd /vagrant
@@ -40,3 +25,4 @@ sudo -u vagrant wget -q https://raw.githubusercontent.com/ivinnikov/vagrant/mast
 
 
 service httpd restart
+
