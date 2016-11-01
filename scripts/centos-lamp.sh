@@ -29,10 +29,12 @@ chkconfig mysql on
 
 service mysqld start
 
-mysql -u roo -e "SHOW DATABASES";
+mysql -u root -e "SHOW DATABASES";
 
 # Download Starter Content
-
+cd /vagrant
+sudo -u vagrant wget -q https://raw.githubusercontent.com/ivinnikov/vagrant/master/files/index.html
+sudo -u vagrant wget -q https://raw.githubusercontent.com/ivinnikov/vagrant/master/files/info.php
 
 
 service httpd restart
